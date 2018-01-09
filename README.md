@@ -5,7 +5,7 @@ Usage:
     Copy to your safest folder like D:\ or E:\
     Extract it
     Load it to your Editor
-    Follow my classes regularly for Updated Code.
+    Follow my classes regularly for Updated and Completed Code.
 
 Thanks for your interest in learning UI Technologies.
 
