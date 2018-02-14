@@ -1,31 +1,83 @@
-const textAreaBorder = document.querySelector("#text-area");
-const textArea = document.querySelector("#text-area");
-const originalText = document.querySelector(".text-section-div p").innerHTML;
-const resetButton = document.querySelector("#reset");
-const theTimer = document.querySelector(".timer");
+var textAreaBorder = document.querySelector("#text-area");
+var textArea = document.querySelector("#text-area");
+var originalText = document.querySelector(".text-section-div p").innerHTML;
+var resetButton = document.querySelector("#reset");
+var theTimer = document.querySelector(".timer");
 
+var timer = 0;
+var minutes = 0;
+var seconds = 0;
+var milliSeconds = 0;
+var currentTime = "";
 
 // Add leading zero to numbers 9 or below:
-
+function leadingZero(time) {
+    var actualTime = "";
+    if(time <= 9){
+        actualTime = "0" + time;
+    }
+    else{
+        actualTime = time;
+    }
+    return actualTime;
+}
 
 
 // Run a standard minute/second/hundredths timer:
 //minutes = Math.floor((timer/100)/60);
 //seconds = Math.floor((timer/100) - (minutes * 60));
 //milliSeconds = Math.floor(timer- (seconds * 100) - (minutes * 6000));
+function startTimer() {
+    minutes = Math.floor((timer/100)/60);
+    seconds = Math.floor((timer/100) - (minutes * 60));
+    milliSeconds = Math.floor(timer- (seconds * 100) - (minutes * 6000));
 
+    minutes = leadingZero(minutes);
+    seconds = leadingZero(seconds);
+    milliSeconds = leadingZero(milliSeconds);
+
+    currentTime = minutes + ":" + seconds + ":" + milliSeconds;
+    theTimer.innerHTML = currentTime;
+    timer++;
+}
 
 
 // Match the text entered with the provided text on the page:
+function spellCheck() {
+    var userText = textArea.value;
+    var userTextMatch =
+        originalText.substring(0,userText.length);
 
+    if(userText == originalText){
+        textAreaBorder.style.borderColor = "green";
+    }
+    else{
+        if(userText == userTextMatch){
+            textAreaBorder.style.borderColor = "blue";
+        }
+        else{
+            textAreaBorder.style.borderColor = "red";
+        }
+    }
+}
 
 
 // Start the timer:
-
+function start() {
+    var userTextLength = textArea.value.length;
+    if(userTextLength === 0){
+        setInterval(startTimer,10);
+    }
+}
 
 
 // Reset everything:
-
+function reset() {
+    console.log("Button Clicked");
+}
 
 
 // Event listeners for keyboard input and the reset button:
+textArea.addEventListener('keypress',start);
+textArea.addEventListener('keyup',spellCheck);
+resetButton.addEventListener('click',reset);
