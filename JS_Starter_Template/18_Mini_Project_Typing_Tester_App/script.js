@@ -5,9 +5,22 @@ var resetButton = document.querySelector("#reset");
 var theTimer = document.querySelector(".timer");
 
 var timer = 0;
+var minutes = 0;
+var seconds = 0;
+var milliSeconds = 0;
+var currentTime = "";
 
 // Add leading zero to numbers 9 or below:
-
+function leadingZero(time) {
+    var actualTime = "";
+    if(time <= 9){
+        actualTime = "0"+time;
+    }
+    else{
+        actualTime = time;
+    }
+    return actualTime;
+}
 
 
 // Run a standard minute/second/hundredths timer:
@@ -15,7 +28,17 @@ var timer = 0;
 //seconds = Math.floor((timer/100) - (minutes * 60));
 //milliSeconds = Math.floor(timer- (seconds * 100) - (minutes * 6000));
 function startTimer() {
-    theTimer.innerHTML = timer;
+    minutes = Math.floor((timer/100)/60);
+    seconds = Math.floor((timer/100) - (minutes * 60));
+    milliSeconds = Math.floor(timer- (seconds * 100) - (minutes * 6000));
+
+    minutes = leadingZero(minutes);
+    seconds = leadingZero(seconds);
+    milliSeconds = leadingZero(milliSeconds);
+
+    currentTime = minutes + ":" + seconds + ":" + milliSeconds;
+
+    theTimer.innerHTML = currentTime;
     timer++;
 }
 
