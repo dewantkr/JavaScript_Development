@@ -9,6 +9,8 @@ var minutes = 0;
 var seconds = 0;
 var milliSeconds = 0;
 var currentTime = "";
+var interval;
+var timerRunning = false;
 
 // Add leading zero to numbers 9 or below:
 function leadingZero(time) {
@@ -46,22 +48,44 @@ function startTimer() {
 // Match the text entered with the provided text on the page:
 function spellCheck() {
     var userText = textArea.value;
-    console.log(userText);
+    var userTextMatch =
+        originalText.substring(0,userText.length);
+    if(userText == originalText){
+        textAreaBorder.style.borderColor = "green";
+        clearInterval(interval);
+    }
+    else{
+        if(userText == userTextMatch){
+            textAreaBorder.style.borderColor = "lightblue";
+        }
+        else{
+            textAreaBorder.style.borderColor = "red";
+        }
+    }
+
 }
 
 
 // Start the timer:
 function start() {
     var userTextLength = textArea.value.length;
-    if(userTextLength === 0){
-        setInterval(startTimer,10);
+    if(userTextLength === 0 && !timerRunning){
+        timerRunning = true;
+        interval = setInterval(startTimer,10);
     }
 }
 
 
 // Reset everything:
 function reset() {
-    console.log("Button Clicked");
+    textAreaBorder.style.borderColor = "gray";
+    textArea.value = "";
+    clearInterval(interval);
+    minutes = 0;
+    seconds = 0;
+    milliSeconds = 0;
+    timerRunning = false;
+    theTimer.innerHTML  = "00:00:00";
 }
 
 
