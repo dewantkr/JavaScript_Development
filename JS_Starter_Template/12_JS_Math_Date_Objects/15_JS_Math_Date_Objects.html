@@ -6,7 +6,7 @@
     <style>
         body{
             margin: 0;
-            font-family: "Comic Sans MS", sans-serif;
+            font-family: "Comic Sans MS",sans-serif;
         }
         h2{
             background-color: lightgreen;
@@ -15,34 +15,24 @@
         }
         div{
             background-color: seagreen;
-            color: white;
             padding: 10px;
             text-align: center;
-            margin: 5px;
+            color: white;
+            margin-bottom: 10px;
         }
-        #INDIA{
-            background-color: purple;
-        }
-        #US{
-            background-color: orangered;
-        }
+
+
     </style>
 </head>
 <body>
 
-    <h2>JS Math & Date Objects</h2>
+    <h2>JS Math & Date Objects Example</h2>
     <div>
         <h1 id="display"></h1>
     </div>
 
-    <!-- Indian Time -->
-    <div id="INDIA">
-        <h1 id="indian-time"></h1>
-    </div>
-
-    <!-- US Time -->
-    <div id="US">
-        <h1 id="us-time"></h1>
+    <div>
+        <h1 id="clock"></h1>
     </div>
 
 </body>
@@ -54,36 +44,18 @@
      */
 
     // Math PI and Sqrt
-    var piValue = Math.PI;
-    var output = "The PI Value is : " + piValue;
-    console.log(output);
-    document.getElementById('display').innerHTML = output;
+
 
     // find the min of 4 numbers
-    var minValue = Math.min(20,4,68,108);
-    output = "The Min Value is : " + minValue;
-    console.log(output);
-    document.getElementById('display').innerHTML = output;
+
 
     // find the Max of 4 numbers
-    var maxValue = Math.max(20,4,68,108,1000);
-    output = "The Max Value is : " + maxValue;
-    console.log(output);
-    document.getElementById('display').innerHTML = output;
 
 
     // find the 'x' to the power of 'y' value, ex: 2^4
-    var twoPower4 = Math.pow(2,4);
-    output = " 2 to the power of 4 is : " + twoPower4;
-    console.log(output);
-    document.getElementById('display').innerHTML = output;
 
 
-    // generate the random numbers from 0 to 1000
-    var random = Math.round(Math.random() * 1000);
-    output = "The random value is : " + random;
-    console.log(output);
-    document.getElementById('display').innerHTML = output;
+    // generate the random numbers from 0 to 100
 
 
     /* For more details about Math Object, please have a look at
@@ -96,67 +68,23 @@
      */
 
     // get today's date
-    var today = new Date();
-    output = "Today is : " + today;
-    document.getElementById('display').innerHTML = output;
+
 
     //get date of the month 0 - 31 getDate()
-    var date = today.getDate() + " / " + (today.getMonth() + 1)
-        + " / " + today.getFullYear();
-    output = "Today's Date is : " + date;
-    document.getElementById('display').innerHTML = output;
+
 
     //get day of the week 0 - 6 getDay()
-    output = "";
-    var day = today.getDay();
-    console.log(day);
-    switch(day){
-        case 0:
-            output = 'Sunday';
-            break;
-        case 1: output = 'Monday';
-            break;
-        case 2: output = 'Tuesday';
-            break;
-        default :
-            output = "Don't know";
-            break;
-    }
-    console.log("Today is  : " + output);
-    document.getElementById('display').innerHTML = "Today is  : " + output;
+
+
+    // get full day of the week using switch statement
+
+
+    // Display a Digital Clock on the web page
 
 
     /* For More Details about Date() please have a look at
         https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
     */
-
-    // Digital Clock
-    function indianTime() {
-        var today = new Date();
-        var options = {
-            timeZone : 'Asia/Kolkata'
-        };
-        var time = today.toLocaleTimeString('en-US',options);
-        console.log(time);
-        document.getElementById('indian-time').innerHTML = " India : " +  time;
-    }
-    indianTime();
-    setInterval(indianTime,1000);
-
-    // US TIME
-    function usTime() {
-        var today = new Date();
-        var options = {
-            timeZone : 'America/New_York'
-        };
-        var time = today.toLocaleTimeString('en-US',options);
-        console.log(time);
-        document.getElementById('us-time').innerHTML = " US : " +  time;
-    }
-    usTime();
-    setInterval(usTime,1000);
-
-
 
 </script>
 </html>
