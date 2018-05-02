@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Form Validation</title>
+    <style>
+        body{
+            font-family: "Comic Sans MS", sans-serif;
+        }
+        div{
+            background-color: lightgreen;
+            padding: 10px;
+            width: 280px;
+            margin: 5px;
+        }
+        input:focus{
+            outline: none;
+        }
+        input{
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>JS Form Validation Example</h2>
+    <div>
+        <form>
+            <table>
+                <tr>
+                    <td>UserName</td>
+                    <td>
+                        <input type="text" id="username">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>
+                        <input type="password" id="password">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" onclick="login()">Submit</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <div style="background-color: orange">
+        <p>UserName : <span id="user-data"></span></p>
+        <p>Password : <span id="pass-data"></span></p>
+    </div>
+
+<script>
+    
+    function login() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        document.getElementById('user-data').innerHTML = username;
+        document.getElementById('pass-data').innerHTML = password;
+    }
+
+    // get elements
+    var username = document.getElementById('username');
+    var password = document.getElementById('password');
+
+    // hookup event listener
+    username.addEventListener('keyup',checkUser);
+    password.addEventListener('keyup',checkPassword);
+
+    // actual logic
+    function checkUser() {
+        var uservalue = username.value;
+        if(uservalue === ''){
+            username.style.borderColor = 'gray';
+        }
+        else if(uservalue === 'naveen'){
+            username.style.borderColor = 'green';
+        }
+        else{
+            username.style.borderColor = 'red';
+        }
+    }
+
+    function checkPassword() {
+        var passwordValue = password.value;
+        if(passwordValue === ''){
+            password.style.borderColor = 'gray';
+        }
+        else if(passwordValue === 'password'){
+            password.style.borderColor = 'green';
+        }
+        else{
+            password.style.borderColor = 'red';
+        }
+    }
+
+
+
+
+</script>
+
+</body>
+</html>

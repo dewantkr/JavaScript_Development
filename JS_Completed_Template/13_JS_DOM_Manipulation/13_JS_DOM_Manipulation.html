@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS DOM Manipulation</title>
+    <style>
+        body{
+            margin: 0;
+            font-family: "Comic Sans MS",sans-serif;
+        }
+        h2{
+            background-color: lightgreen;
+            text-align: center;
+            padding: 10px;
+        }
+        div{
+            background-color: seagreen;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>JS DOM Manipulation</h2>
+    <div>
+        <h1 id="display"></h1>
+    </div>
+
+</body>
+<script>
+
+    //BOM Operations
+
+    // width of the browser
+    var width = window.innerWidth;
+    var output = "The Width of Browser is " + width + "px";
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    // Height of the browser
+    var height = window.innerHeight;
+    output = "The Height of the browser is : " + height + "px";
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    // Open a new Tab
+    // window.open();
+
+    // DOM Properties to get body , title , URL
+
+    // Body Element
+    var body = document.body;
+    console.log(body);
+    document.getElementById('display').innerHTML = body + "";
+
+    // Title
+    var title = document.title;
+    output = " Title : " + title;
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+    document.title = "Changed by  Me"; //  to change the title
+
+
+    //DOM Methods
+    //document.getElementById();
+    //document.getElementsByClassName();
+    //document.getElementsByTagName();
+    //document.querySelector();
+    //document.querySelectorAll();
+
+    // go to w3schools.com and execute this in the web console
+    document.querySelector('.w3-right').innerHTML
+        = 'UiBrains is Worlds largest Website';
+
+    // go to w3schools.com HTML Tutorial and execute this in the web console
+    document.querySelector('.intro').innerHTML
+        = '<h1 style="color: red">Hacked by Naveen</h1>';
+
+
+</script>
+</html>
