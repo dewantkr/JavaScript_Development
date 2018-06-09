@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS DOM Manipulation</title>
+    <style>
+        body{
+            margin: 0;
+            font-family: "Comic Sans MS",sans-serif;
+        }
+        h2{
+            background-color: lightgreen;
+            text-align: center;
+            padding: 10px;
+        }
+        div{
+            background-color: seagreen;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>JS DOM Manipulation</h2>
+    <div>
+        <h1 id="display"></h1>
+    </div>
+
+</body>
+<script>
+
+    //BOM Operations
+
+    // width of the browser
+    var width = window.innerWidth;
+    var output = "Width of the browser is : " + width + "px";
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    // Height of the Browser
+    var height = window.innerHeight;
+    output = "Height of the browser is : " + height + "px";
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    // Open a new Tab
+   // window.open();
+
+    // DOM Properties to get body , title , URL
+    var title = document.title;
+    output = "The title is : " + title;
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+
+    var url = document.URL;
+    output = url;
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    //DOM Methods
+    //document.getElementById();
+    //document.getElementsByClassName();
+    //document.getElementsByTagName();
+    //document.querySelector();
+    //document.querySelectorAll();
+
+
+    // go to w3schools execute this in the web console
+    document.querySelector('.w3-right').innerHTML = "UIBRAINS IS THE LARGEST SITE";
+
+
+</script>
+</html>

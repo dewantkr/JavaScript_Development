@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Handling</title>
+    <style>
+        .events-div{
+            font-family: "Comic Sans MS", sans-serif;
+            background-color: orange;
+            padding: 10px;
+            font-size: 18px;
+            width: 400px;
+        }
+        input[type='text']{
+            border: 2px solid black;
+        }
+
+        input[type='text']:focus{
+            outline: none;
+        }
+
+        /* listeners div */
+        .listener-div{
+            font-family: "Comic Sans MS", sans-serif;
+            background-color: seagreen;
+            margin: 5px;
+            padding: 10px;
+            width: 400px;
+            color: white;
+        }
+        .listener-div h2{
+            background-color: purple;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Event Handling -->
+    <div class="events-div">
+        <form>
+            <label>User Name</label>
+            <input type="text" id="username">
+            <input type="button" value="Submit" onclick="validate()">
+        </form>
+    </div>
+
+    <!-- Event Listeners -->
+    <div class="listener-div">
+        <form>
+            <label>Enter Text Here</label>
+            <input type="text" id="userText">
+        </form>
+        <h2 id="display"></h2>
+    </div>
+
+<script>
+    function validate() {
+       var username = document.querySelector('#username').value;
+       var inputBox = document.querySelector('#username');
+        if(username === 'naveen'){
+            inputBox.style.borderColor = 'green';
+        }
+        else{
+            inputBox.style.borderColor = 'red';
+        }
+    }
+
+    // Listeners Code starts here
+
+
+    // get the element
+    var user_text = document.querySelector('#userText');
+
+    // hook up event listeners
+    user_text.addEventListener('keyup',spellCheck);
+
+    // add logic for function
+    function spellCheck() {
+        var userEnteredText = user_text.value;
+        document.getElementById('display').innerHTML = userEnteredText;
+    }
+
+</script>
+
+</body>
+</html>
