@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Closures</title>
+    <style>
+        h2{
+            background-color: lightgreen;
+            text-align: center;
+            padding: 5px;
+        }
+        div{
+            padding: 10px;
+            text-align: center;
+            color: white;
+            margin: 10px;
+        }
+        .green{
+            background-color: seagreen;
+        }
+        .blue{
+            background-color: darkslateblue;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>JS Closures Example</h2>
+
+    <div class="green">
+        <h1 id="display1"></h1>
+    </div>
+
+    <div class="blue">
+        <h1 id="display2"></h1>
+    </div>
+
+</body>
+<script>
+
+    function createEmployee(){
+        var firstName = 'Arjun';
+        var lastName = 'Reddy';
+        var emp = {
+            getFirstName : function(){
+                return firstName;
+            },
+            getLastName : function() {
+                return lastName;
+            },
+            setFirstName : function(name) {
+                firstName = name;
+            },
+            setLastName : function(name) {
+                lastName = name;
+            }
+        };
+        return emp;
+    }
+
+    var employee = createEmployee();
+    document.querySelector('#display1').innerHTML = employee.getFirstName();
+    document.querySelector('#display2').innerHTML = employee.getLastName();
+
+    employee.setFirstName('Amrendra');
+    employee.setLastName('Baahubali');
+
+    document.querySelector('#display1').innerHTML = employee.getFirstName();
+    document.querySelector('#display2').innerHTML = employee.getLastName();
+
+
+</script>
+</html>

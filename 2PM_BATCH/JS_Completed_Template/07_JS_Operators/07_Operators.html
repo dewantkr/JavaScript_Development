@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Operators</title>
+    <style>
+        body{
+            margin: 0;
+            font-family: "Comic Sans MS",sans-serif;
+        }
+        h2{
+            background-color: lightgreen;
+            text-align: center;
+            padding: 10px;
+        }
+        div{
+            background-color: seagreen;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>JS Operators Example</h2>
+    <div>
+        <h1 id="display"></h1>
+    </div>
+
+</body>
+<script>
+
+    // Assignment operator =
+    var a = 10;
+    var output = "The value of a is : " +  a;
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    // Arithmetic operators + - * /
+    var p = 10;
+    var q = 20;
+    var sum = p + q;
+    output = "The Sum of p , q is : " + sum;
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    // Short hand math += , -= , *= , /=
+    var x = 10;
+    var y = 20;
+    var add = 0;
+    add = add + (x + y); //long way
+    add += (x + y); //short hand math
+    output = "The add value is : " + add;
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    // Conditional operators < , > , <= , >= , !=
+    var age = 25;
+    output = "";
+    if(age <= 18){
+        output = "You are Minor";
+    }
+    else{
+        output = "You are Major";
+    }
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    // Unary Operator ++ , -- (pre , post)
+    var abc = 10;
+    abc = abc + 1; // long way
+    abc += 1;      // short hand math
+    abc++;         // unary operator
+    output = "The abc value is : " + abc;
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    // Logical operators AND , OR
+    var inRelation = true;
+    var parentsAgreed = false;
+    output = "";
+    if(inRelation && parentsAgreed){
+        output = "Get Marry Soon";
+    }
+    else{
+        output = "Please wait until parents Agreed";
+    }
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    // String Concatenation Operator (+)
+    var str = 2 + 4 + "3" + 4 + 2;
+    output = "The str value is : " + str;
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    // Ternary operator (? :)
+    var age = 25;
+    output = "";
+    (age >= 18)? output = "Your are Major" : output = "You are Minor";
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    // Type of operator
+    var xyz; // undefined
+
+    xyz = 10; // number
+
+    xyz = 'Test'; // string
+
+    xyz = true; // boolean
+
+    xyz = null; // object
+
+    output = "The type of abc is : " + typeof xyz;
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+     // == operator
+     var a = 10;
+     var b = "10";
+     output = "";
+     if(a == b){
+         output = "Both are Equal";
+     }
+     else{
+         output = "Both are NOT Equal";
+     }
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    // === operator
+    var a = 10;
+    var b = "10";
+    output = "";
+    if(a === b){
+        output = "Both are Equal";
+    }
+    else{
+        output = "Both are NOT Equal";
+    }
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+
+</script>
+</html>

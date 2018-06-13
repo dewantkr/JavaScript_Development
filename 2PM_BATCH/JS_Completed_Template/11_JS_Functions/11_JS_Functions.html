@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Functions</title>
+    <style>
+        body{
+            margin: 0;
+            font-family: "Comic Sans MS",sans-serif;
+        }
+        h2{
+            background-color: lightgreen;
+            text-align: center;
+            padding: 10px;
+        }
+        div{
+            background-color: seagreen;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>JS Functions Example</h2>
+    <div>
+        <h1 id="display"></h1>
+    </div>
+
+</body>
+
+<script>
+
+    //creation of a simple function with no args and execute a function
+    function greet() {
+        var output = "Good Morning";
+        console.log(output);
+    }
+    greet();
+
+    //creation of a simple function with args
+    function greetArgs(name) {
+        var output = "Hello " + name + " Good Morning";
+        console.log(output);
+        document.getElementById('display').innerHTML = output;
+    }
+    greetArgs('John');
+
+    // executing a function with less number of params
+    function greetLessArgs(name, age) {
+        var output = "Hello " + name + " You are " + age + " Years Old!!";
+        console.log(output);
+        document.getElementById('display').innerHTML = output;
+    }
+    greetLessArgs('John');
+
+    //executing a function with more number of params
+    function greetMoreArgs(name) {
+        var output = " Good Afternoon " + name;
+        console.log(output);
+        document.getElementById('display').innerHTML = output;
+    }
+    greetMoreArgs('Williams',45);
+
+    //function overloading is not possible here
+
+    // functions with return values
+    function greetReturn(name) {
+        var output = "Hello " + name + " Iam from greetReturn()";
+        return output;
+    }
+    var greeting = greetReturn('John');
+    console.log(greeting);
+    document.getElementById('display').innerHTML = greeting;
+
+    // function Expressions with name and execution
+    var greetFn = function greet() {
+        var output = "Hello , Iam from greenFn() Function";
+        console.log(output);
+        document.getElementById('display').innerHTML = output;
+    };
+
+    greetFn();
+
+    // Anonymous Function Expression and execution
+    var anonymousFn = function() {
+        var output = "Hello , Iam from anonymousFn() Function";
+        console.log(output);
+        document.getElementById('display').innerHTML = output;
+    };
+    anonymousFn();
+
+    // Functions as arguments without args
+    function greet1(name) {
+        var output = "Iam from greet1() function " + name;
+        console.log(output);
+        document.getElementById('display').innerHTML = output;
+    }
+    function greet2(name) {
+        var output = "Iam from greet2() function " + name;
+        console.log(output);
+        document.getElementById('display').innerHTML = output;
+    }
+    function greetEngine(fName,name) {
+       fName(name);
+    }
+    greetEngine(greet2,'Williams');
+    greetEngine(greet1,'Williams');
+
+
+    // Functions in Objects and Execution
+    var student = {
+        firstName : 'Arjun',
+        lastName : 'Reddy',
+        getFullName : function() {
+            return this.firstName + " " + this.lastName;
+        }
+    };
+
+    var fullName = student.getFullName();
+    console.log(fullName);
+    document.getElementById('display').innerHTML = fullName;
+
+    // Coding Exercise 1
+    /*
+    Create an employee obj and address object in it. add a property called
+    isFromState() to return true if a person from that state.
+     */
+
+    var employee = {
+        name : 'Rajan',
+        age : 35,
+        designation : 'Manager',
+        address : {
+            city : 'Hyderabad',
+            state : 'Telangana',
+            country : 'India'
+        },
+        isFromState : function(state) {
+            return this.address.state === state;
+        }
+    };
+
+    output = "is From Telangana ?  : " + employee.isFromState('Telangana');
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    // Default Function Arguments (arguments)
+    function defaultArgs() {
+        var output = "";
+        for(var i = 0; i< arguments.length; i++){
+            output += arguments[i] + " ";
+        }
+        console.log(output);
+        document.getElementById('display').innerHTML = output;
+    }
+
+    defaultArgs('John',40,50000);
+
+</script>
+</html>
