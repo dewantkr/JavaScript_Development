@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Operators</title>
+    <style>
+        body{
+            margin: 0;
+            font-family: "Comic Sans MS",sans-serif;
+        }
+        h2{
+            background-color: lightgreen;
+            text-align: center;
+            padding: 10px;
+        }
+        div{
+            background-color: seagreen;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>JS Operators Example</h2>
+    <div>
+        <h1 id="display"></h1>
+    </div>
+
+</body>
+<script>
+
+    // Assignment operator =
+    var a = 10;
+    var output = "The Value of a is : " + a;
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+
+    // Arithmetic operators + - * /
+    var x = 10;
+    var y = 20;
+    var sum = x + y;
+    output = "The Sum of x , y is : " + sum;
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    var sub = x - y;
+    output = "The sub of x , y is : " + sub;
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    var mul = x * y;
+    output = "The mul of x , y is : " + mul;
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    var div = x / y;
+    output = "The Div of x , y is : " + div;
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    // Short hand math += , -= , *= , /=
+    var b = 10;
+    var c = 20;
+    var add = 0;
+    add = add + (b + c); // Long Math
+    add += (b + c); // Short hand math
+    output = "The Add Value is : " + add;
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+
+    // Conditional operators < , > , <= , >= , !=
+    var age = 25;
+    output = "";
+    if(age <= 30){
+        output = "Get a Job";
+    }
+    else{
+        output = "Get Marry Soon";
+    }
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+
+    // Unary Operator ++ , -- (pre , post)
+    var num1 = 10;
+    num1 = num1 + 1; // Long way
+    num1 += 1; // Short way
+    num1++; // Shortest way / Unary operator
+    output = "The value is num1 is : " + num1;
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    // Logical operators AND , OR
+    var inRelation = true;
+    var parentsAgreed = false;
+    output = "";
+    if(inRelation && parentsAgreed){
+        output = "Get Marry Soon";
+    }
+    else{
+        output = "Wait until the parents Agreed";
+    }
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    // String Concatenation Operator (+)
+    var name = 'John';
+    var age = 40;
+    output = name + " " + age;
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    // Ternary operator (? :)
+    var a = 10;
+    var b = 10;
+    output = "";
+    (a >= b) ? output = "a is Big" : output = "b is Big";
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+    // Type of operator
+    var abc;
+
+    abc = 10;
+
+    abc = 'Test';
+
+    abc = true;
+
+    abc = null;
+
+    output = "The Type of abc is : " + typeof abc;
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+
+     // == operator
+    var num1 = 10;
+    var num2 = "10";
+    output = "";
+    if(num1 == num2){
+        output = "Both are Equal";
+    }
+    else{
+        output = "Both are NOT Equal";
+    }
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+
+    // === operator
+    var num1 = 10;
+    var num2 = "10";
+    output = "";
+    if(num1 === num2){
+        output = "Both are Equal";
+    }
+    else{
+        output = "Both are NOT Equal";
+    }
+    console.log(output);
+    document.getElementById('display').innerHTML = output;
+
+</script>
+</html>
