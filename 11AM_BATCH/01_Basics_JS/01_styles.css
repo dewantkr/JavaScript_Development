@@ -12,13 +12,13 @@ div{
     padding: 10px;
     text-align: center;
 }
-input[type='number']{
+input{
     text-align: center;
     border: 2px solid orangered;
-    border-radius: 20px;
-    height: 35px;
+    height: 25px;
+    border-radius: 50px;
 }
-input[type='number']:focus{
+input:focus{
     outline: none;
     background-color: lightgreen;
 }
